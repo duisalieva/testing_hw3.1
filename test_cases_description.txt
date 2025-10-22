@@ -1,0 +1,62 @@
+testing Homework 3 :)
+Сайт: SauceDemo (https://www.saucedemo.com)
+Framework: Robot Framework+SeleniumLibrary
+Browser: Google Chrome
+
+Test Case 1: Login
+
+Objective:
+    Verify that user can log in with valid credentials.
+
+Preconditions:
+    The user has access to the website https://www.saucedemo.com.
+Steps:
+    1. Open browser and navigate to the website.
+    2. Enter username "standard_user".
+    3. Enter password "secret_sauce".
+    4. Click the "Login" button.
+Expected Result:
+    The inventory page is displayed with the list of products.
+
+
+Test Case 2: Verify Product List
+
+Objctive:
+    Verify that the list of products is visible after login.
+
+Steps:
+    1. Log in using valid credentials.
+    2. Wait for the product list to load.
+    3. Check that product names are visible on the page.
+Expected Result:
+    At least one product item is displayed.
+
+
+Test Case 3:
+Add To Cart
+
+Objective:
+    Verify that a product can be added to the shopping cart.
+
+Steps:
+    1. Login using valid credentials.
+    2. Click the "Add to cart" button for the first product.
+    3. Click the cart icon.
+Expected Result:
+    The selected product appears in the shopping cart.
+
+
+Test Case 4: Checkout Complete
+
+Objective:
+    Verify that the user can complete checkout successfully.
+
+Steps:
+    1. Log in using valid credentials.
+    2. Add a product to the cart.
+    3. Go to the cart and click "Checkout".
+    4. Fill in First Name, Last Name, Postal Code.
+    5. Click "Continue" and then "Finish".
+Expected Result:
+    idk, message "Order is done" or smth
+
