@@ -32,7 +32,7 @@ Products
     Page Should Contain Element         class=inventory_item
     ${items}=    Get WebElements    class=inventory_item_name
     Log Many    ${items}
-    Length Should Be Greater Than    ${items}    0
+    Should Not Be Empty    ${items}
     Close Browser
 
 
@@ -68,8 +68,9 @@ Completing
     Input Text    id=last-name     Test
     Input Text    id=postal-code   090003
     Click Button   id=continue
-    Wait Until Page Contains Element    id=finish    10s
-    Click Button   id=finish
-    Wait Until Page Contains Element    class=complete-header    10s
+    Wait Until Element Is Enabled    id=finish    10s
+    Click Button    id=finish
+    Sleep    1s
+    Wait Until Element Contains    class=complete-header    THANK YOU FOR YOUR ORDER    10s
     Element Text Should Be    class=complete-header    THANK YOU FOR YOUR ORDER
     Close Browser
