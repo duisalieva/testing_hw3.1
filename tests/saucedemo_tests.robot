@@ -69,22 +69,17 @@ Completing
     Input Text    id=postal-code   090003
     Click Button   id=continue
 
-    # ждём, пока появится кнопка Finish на экране обзора (как на скрине)
+    # ждём, пока появится кнопка Finish на экране обзора
     Wait Until Page Contains Element    id=finish    10s
-
-    # прокручиваем кнопку в видимую область, на всякий случай
-    Scroll Element Into View    id=finish
-
+    Scroll Element Into View            id=finish
     Sleep    1s
-
-    # жмём Finish
-    Click Button    id=finish
+    Click Button                        id=finish
 
     # даём странице время показаться
     Sleep    2s
 
-    # проверяем, что появилась финальная страница с текстом об успешном заказе
-    Wait Until Page Contains    THANK YOU FOR YOUR ORDER    10s
-    Page Should Contain         THANK YOU FOR YOUR ORDER
+    # проверяем текст об успешном заказе
+    Wait Until Page Contains    Thank you for your order!    15s
+    Page Should Contain         Thank you for your order!
 
     Close Browser
