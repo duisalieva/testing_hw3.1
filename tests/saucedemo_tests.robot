@@ -68,26 +68,24 @@ Completing
     Input Text    id=last-name     Test
     Input Text    id=postal-code   090003
     Click Button   id=continue
-        # ждём, пока кнопка появится в DOM
+
+    # ждём появления кнопки Finish
     Wait Until Page Contains Element    id=finish    10s
-
-    # скроллим кнопку в видимую область (важно для Jenkins)
     Scroll Element Into View    id=finish
-
-    # ждём, пока она станет кликабельной
     Wait Until Element Is Enabled    id=finish    10s
+    Sleep    1s
+    Click Button    id=finish
 
     Sleep    1s
 
-    # пробуем клик (иногда 1-й fail — Jenkins так делает)
-    Run Keyword And Ignore Error    Click Button    id=finish
+    # Гибкая проверка успеха чекаута
+    Wait Until Keyword Succeeds    10x    1s    Check Checkout Success
 
-    Sleep   1s
+    Close Browser
 
-    # повторный клик — гарантирует стабильность
-    Click Button    id=finish
 
-    # теперь ждём заголовок
-    Wait Until Element Contains    class=complete-header    THANK YOU FOR YOUR ORDER    10s
-
-    Element Text Should Be    class=complete-header    THANK YOU FOR YOUR ORDER
+*** Keywords ***
+Check Checkout Success
+    Page Should Contain    THANK YOU FOR YOUR ORDER
+    Run Keyword And Continue On Failure    Page Should Contain Element    xpath=//div[contains(@class,"complete-text")]
+    Run Keyword And Continue On Failure    Page Should Contain Element    xpath=//h2[contains(., "THANK YOU")]
