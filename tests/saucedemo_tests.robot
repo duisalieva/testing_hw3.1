@@ -70,10 +70,12 @@ Completing
     Click Button   id=continue
 
     # ждём, пока появится кнопка Finish на экране обзора
-    Wait Until Page Contains Element    id=finish    10s
-    Scroll Element Into View            id=finish
+    Wait Until Element Is Visible    id=finish    10s
+    Scroll Element Into View         id=finish
     Sleep    1s
-    Click Button                        id=finish
+
+    # клик через JavaScript, чтобы точно сработало
+    Execute Javascript    document.getElementById("finish").click();
 
     # даём странице время показаться
     Sleep    2s
