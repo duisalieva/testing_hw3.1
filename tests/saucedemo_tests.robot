@@ -74,18 +74,18 @@ Completing
     Input Text    id=postal-code   090003
     Click Button   id=continue
 
-    # ждём, пока появится кнопка Finish на экране обзора
+
     Wait Until Element Is Visible    id=finish    10s
     Scroll Element Into View         id=finish
     Sleep    1s
 
-    # клик через JavaScript, чтобы точно сработало
+
     Execute Javascript    document.getElementById("finish").click();
 
-    # даём странице время показаться
+
     Sleep    2s
 
-    # проверяем текст об успешном заказе
+
     Wait Until Page Contains    Thank you for your order!    15s
     Page Should Contain         Thank you for your order!
 

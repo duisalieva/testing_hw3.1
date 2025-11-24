@@ -1,141 +1,418 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.6 on darwin)" generated="2025-11-24T15:46:17.767894" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.6 on darwin)" generated="2025-11-24T15:59:55.174940" rpa="false" schemaversion="5">
 <suite id="s1" name="Saucedemo Tests" source="/Users/sabinaduisaliyeva/PycharmProjects/Testing/tests/saucedemo_tests.robot">
-<test id="s1-t1" name="Login" line="12">
+<test id="s1-t1" name="Login" line="21">
+<kw name="Open SauceDemo In BrowserStack">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-24T15:59:55.265896" level="INFO">${caps} = {'browserName': 'safari', 'os': 'OS X', 'osVersion': 'Sonoma', 'buildName': 'Saucedemo Robot HW', 'sessionName': 'Saucedemo_safari'}</msg>
+<var>${caps}</var>
+<arg>browserName=${browser}</arg>
+<arg>os=${BS_OS}</arg>
+<arg>osVersion=${BS_OS_VERSION}</arg>
+<arg>buildName=${BS_BUILD_NAME}</arg>
+<arg>sessionName=Saucedemo_${browser}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-24T15:59:55.265672" elapsed="0.000248"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:46:17.863722" level="INFO">Opening browser 'safari' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:59:55.266179" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T15:59:55.266237" level="INFO">Opening browser 'safari' to base url 'https://www.saucedemo.com/' through remote server at 'https://duisalievasabina_hwWtgm:zn455DpzbeKBfaxqZ3ki@hub-cloud.browserstack.com/wd/hub'.</msg>
+<msg time="2025-11-24T16:00:11.329936" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-11-24T16:00:11.330476" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/remote_connection.py:421: UserWarning: Embedding username and password in URL could be insecure, use ClientConfig instead
+  headers = self.get_remote_connection_headers(parsed_url, self._client_config.keep_alive)</msg>
+<msg time="2025-11-24T16:00:11.331610" level="FAIL">WebDriverException: Message: unhandled error
+</msg>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${caps}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-24T15:46:17.863578" elapsed="2.188397"/>
+<status status="FAIL" start="2025-11-24T15:59:55.266011" elapsed="16.073190">WebDriverException: Message: unhandled error
+</status>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:48:24.173989" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
-<msg time="2025-11-24T15:48:24.174495" level="FAIL">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54001): Read timed out. (read timeout=120)</msg>
 <doc>Maximizes current browser window.</doc>
-<status status="FAIL" start="2025-11-24T15:46:20.052708" elapsed="124.130521">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54001): Read timed out. (read timeout=120)</status>
+<status status="NOT RUN" start="2025-11-24T16:00:11.339546" elapsed="0.000050"/>
+</kw>
+<status status="FAIL" start="2025-11-24T15:59:55.265284" elapsed="16.074486">WebDriverException: Message: unhandled error
+</status>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>id=user-name</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.183442" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-11-24T16:00:11.339979" elapsed="0.000032"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>id=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.183558" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-11-24T16:00:11.340133" elapsed="0.000024"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>id=login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.183647" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-11-24T16:00:11.340267" elapsed="0.000025"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>class=inventory_list</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.183724" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-11-24T16:00:11.340398" elapsed="0.000022"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
 <arg>class=inventory_item</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.183800" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-11-24T16:00:11.340519" elapsed="0.000020"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.183867" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-11-24T16:00:11.340637" elapsed="0.000022"/>
 </kw>
 <doc>Verify that user can log in with valid credentials</doc>
-<status status="FAIL" start="2025-11-24T15:46:17.863081" elapsed="126.320961">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54001): Read timed out. (read timeout=120)</status>
+<status status="FAIL" start="2025-11-24T15:59:55.264939" elapsed="16.075948">WebDriverException: Message: unhandled error
+</status>
 </test>
-<test id="s1-t2" name="Products" line="24">
+<test id="s1-t2" name="Products" line="32">
+<kw name="Open SauceDemo In BrowserStack">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-24T16:00:11.342320" level="INFO">${caps} = {'browserName': 'safari', 'os': 'OS X', 'osVersion': 'Sonoma', 'buildName': 'Saucedemo Robot HW', 'sessionName': 'Saucedemo_safari'}</msg>
+<var>${caps}</var>
+<arg>browserName=${browser}</arg>
+<arg>os=${BS_OS}</arg>
+<arg>osVersion=${BS_OS_VERSION}</arg>
+<arg>buildName=${BS_BUILD_NAME}</arg>
+<arg>sessionName=Saucedemo_${browser}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-24T16:00:11.341925" elapsed="0.000424"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-24T16:00:11.342789" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T16:00:11.342896" level="INFO">Opening browser 'safari' to base url 'https://www.saucedemo.com/' through remote server at 'https://duisalievasabina_hwWtgm:zn455DpzbeKBfaxqZ3ki@hub-cloud.browserstack.com/wd/hub'.</msg>
+<msg time="2025-11-24T16:00:21.057105" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-11-24T16:00:21.057766" level="FAIL">WebDriverException: Message: unhandled error
+</msg>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${caps}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2025-11-24T15:48:24.184466" elapsed="0.000179">Execution terminated by signal</status>
+<status status="FAIL" start="2025-11-24T16:00:11.342466" elapsed="9.717649">WebDriverException: Message: unhandled error
+</status>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.184722" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.060718" elapsed="0.000102"/>
+</kw>
+<status status="FAIL" start="2025-11-24T16:00:11.341604" elapsed="9.719421">WebDriverException: Message: unhandled error
+</status>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>id=user-name</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.184794" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.061258" elapsed="0.000035"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>id=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.184866" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.061421" elapsed="0.000024"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>id=login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.184933" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.061551" elapsed="0.000025"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>class=inventory_list</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.185002" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.061684" elapsed="0.000023"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
 <arg>class=inventory_item</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.185067" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.061811" elapsed="0.000021"/>
 </kw>
 <kw name="Get WebElements" owner="SeleniumLibrary">
 <var>${items}</var>
 <arg>class=inventory_item_name</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.185136" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.061939" elapsed="0.000023"/>
 </kw>
 <kw name="Log Many" owner="BuiltIn">
 <arg>${items}</arg>
 <doc>Logs the given messages as separate entries using the INFO level.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.185232" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.062089" elapsed="0.000024"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${items}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.185313" elapsed="0.000013"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.062210" elapsed="0.000020"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-11-24T15:48:24.185379" elapsed="0.000012"/>
+<status status="NOT RUN" start="2025-11-24T16:00:21.062479" elapsed="0.000025"/>
 </kw>
 <doc>Verify that all product elements are visible after login</doc>
-<status status="FAIL" start="2025-11-24T15:48:24.184219" elapsed="0.001251">Execution terminated by signal</status>
+<status status="FAIL" start="2025-11-24T16:00:11.341171" elapsed="9.721571">WebDriverException: Message: unhandled error
+</status>
 </test>
-<test id="s1-t3" name="Adding to card" line="39">
+<test id="s1-t3" name="Adding to card" line="46">
+<kw name="Open SauceDemo In BrowserStack">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-24T16:00:21.064279" level="INFO">${caps} = {'browserName': 'safari', 'os': 'OS X', 'osVersion': 'Sonoma', 'buildName': 'Saucedemo Robot HW', 'sessionName': 'Saucedemo_safari'}</msg>
+<var>${caps}</var>
+<arg>browserName=${browser}</arg>
+<arg>os=${BS_OS}</arg>
+<arg>osVersion=${BS_OS_VERSION}</arg>
+<arg>buildName=${BS_BUILD_NAME}</arg>
+<arg>sessionName=Saucedemo_${browser}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-24T16:00:21.063835" elapsed="0.000482"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-24T16:00:21.064799" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T16:00:21.064908" level="INFO">Opening browser 'safari' to base url 'https://www.saucedemo.com/' through remote server at 'https://duisalievasabina_hwWtgm:zn455DpzbeKBfaxqZ3ki@hub-cloud.browserstack.com/wd/hub'.</msg>
+<msg time="2025-11-24T16:00:52.392358" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-11-24T16:00:52.392948" level="FAIL">WebDriverException: Message: unhandled error
+</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${caps}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-11-24T16:00:21.064460" elapsed="31.330273">WebDriverException: Message: unhandled error
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.395102" elapsed="0.000062"/>
+</kw>
+<status status="FAIL" start="2025-11-24T16:00:21.063494" elapsed="31.331838">WebDriverException: Message: unhandled error
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.395586" elapsed="0.000039"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.395770" elapsed="0.000028"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.395920" elapsed="0.000027"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=inventory_list</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.396072" elapsed="0.000030"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//button[@id='add-to-cart-sauce-labs-backpack']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.396213" elapsed="0.000021"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>class=shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.396330" elapsed="0.000019"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=cart_item</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.396438" elapsed="0.000021"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>class=inventory_item_name</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.396559" elapsed="0.000019"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-11-24T16:00:52.396697" elapsed="0.000021"/>
+</kw>
 <doc>Verify that user can add a product to the shopping cart</doc>
-<tag>robot:exit</tag>
-<status status="FAIL" start="2025-11-24T15:48:24.185582" elapsed="0.000198">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" start="2025-11-24T16:00:21.063020" elapsed="31.333902">WebDriverException: Message: unhandled error
+</status>
 </test>
-<test id="s1-t4" name="Completing" line="54">
+<test id="s1-t4" name="Completing" line="60">
+<kw name="Open SauceDemo In BrowserStack">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-24T16:00:52.401063" level="INFO">${caps} = {'browserName': 'safari', 'os': 'OS X', 'osVersion': 'Sonoma', 'buildName': 'Saucedemo Robot HW', 'sessionName': 'Saucedemo_safari'}</msg>
+<var>${caps}</var>
+<arg>browserName=${browser}</arg>
+<arg>os=${BS_OS}</arg>
+<arg>osVersion=${BS_OS_VERSION}</arg>
+<arg>buildName=${BS_BUILD_NAME}</arg>
+<arg>sessionName=Saucedemo_${browser}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-24T16:00:52.400638" elapsed="0.000460"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-24T16:00:52.401575" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T16:00:52.401679" level="INFO">Opening browser 'safari' to base url 'https://www.saucedemo.com/' through remote server at 'https://duisalievasabina_hwWtgm:zn455DpzbeKBfaxqZ3ki@hub-cloud.browserstack.com/wd/hub'.</msg>
+<msg time="2025-11-24T16:01:09.594257" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-11-24T16:01:09.594786" level="FAIL">WebDriverException: Message: unhandled error
+</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${caps}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-11-24T16:00:52.401233" elapsed="17.195493">WebDriverException: Message: unhandled error
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.597143" elapsed="0.000068"/>
+</kw>
+<status status="FAIL" start="2025-11-24T16:00:52.400273" elapsed="17.197124">WebDriverException: Message: unhandled error
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.597643" elapsed="0.000038"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.597829" elapsed="0.000031"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.597982" elapsed="0.000028"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=inventory_list</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.598137" elapsed="0.000028"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//button[@id='add-to-cart-sauce-labs-bike-light']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.598281" elapsed="0.000024"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>class=shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.598533" elapsed="0.000028"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=cart_item</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.598674" elapsed="0.000024"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=checkout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.598802" elapsed="0.000025"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=first-name</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.598965" elapsed="0.000025"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=first-name</arg>
+<arg>Galateya</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.599095" elapsed="0.000025"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=last-name</arg>
+<arg>Test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.599227" elapsed="0.000023"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=postal-code</arg>
+<arg>090003</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.599353" elapsed="0.000024"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.599485" elapsed="0.000022"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=finish</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.599613" elapsed="0.000024"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>id=finish</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.599745" elapsed="0.000023"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.599888" elapsed="0.000025"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>document.getElementById("finish").click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.600044" elapsed="0.000024"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.600176" elapsed="0.000028"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Thank you for your order!</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.600308" elapsed="0.000023"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Thank you for your order!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.600438" elapsed="0.000022"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-11-24T16:01:09.600559" elapsed="0.000023"/>
+</kw>
 <doc>Verify that user can complete checkout successfully</doc>
-<tag>robot:exit</tag>
-<status status="FAIL" start="2025-11-24T15:48:24.185880" elapsed="0.000169">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" start="2025-11-24T16:00:52.397181" elapsed="17.203647">WebDriverException: Message: unhandled error
+</status>
 </test>
-<status status="FAIL" start="2025-11-24T15:46:17.768494" elapsed="126.417805"/>
+<status status="FAIL" start="2025-11-24T15:59:55.175894" elapsed="74.425613"/>
 </suite>
 <statistics>
 <total>
 <stat pass="0" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat info="combined" combined="NOT robot:exit" pass="0" fail="2" skip="0">NOT robot:exit</stat>
 </tag>
 <suite>
 <stat name="Saucedemo Tests" id="s1" pass="0" fail="4" skip="0">Saucedemo Tests</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-11-24T15:48:24.173989" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<msg time="2025-11-24T15:59:55.266179" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T16:00:11.342789" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T16:00:21.064799" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T16:00:52.401575" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
 </errors>
 </robot>

@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46296655-ac6b-4471-8a82-c3963b64abba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_chrome/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_chrome/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_chrome/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_chrome/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_chrome/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_chrome/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_firefox/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_firefox/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_firefox/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_firefox/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_firefox/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_firefox/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_safari/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_safari/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_safari/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_safari/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results_bs_safari/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results_bs_safari/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/saucedemo_tests.robot" beforeDir="false" afterPath="$PROJECT_DIR$/tests/saucedemo_tests.robot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

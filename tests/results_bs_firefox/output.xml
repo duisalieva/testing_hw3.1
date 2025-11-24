@@ -1,342 +1,412 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.6 on darwin)" generated="2025-11-24T15:40:38.171014" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.6 on darwin)" generated="2025-11-24T15:57:37.840468" rpa="false" schemaversion="5">
 <suite id="s1" name="Saucedemo Tests" source="/Users/sabinaduisaliyeva/PycharmProjects/Testing/tests/saucedemo_tests.robot">
-<test id="s1-t1" name="Login" line="12">
+<test id="s1-t1" name="Login" line="21">
+<kw name="Open SauceDemo In BrowserStack">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-24T15:57:37.935522" level="INFO">${caps} = {'browserName': 'firefox', 'os': 'OS X', 'osVersion': 'Sonoma', 'buildName': 'Saucedemo Robot HW', 'sessionName': 'Saucedemo_firefox'}</msg>
+<var>${caps}</var>
+<arg>browserName=${browser}</arg>
+<arg>os=${BS_OS}</arg>
+<arg>osVersion=${BS_OS_VERSION}</arg>
+<arg>buildName=${BS_BUILD_NAME}</arg>
+<arg>sessionName=Saucedemo_${browser}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-24T15:57:37.935320" elapsed="0.000223"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:40:38.257542" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:57:37.935777" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T15:57:37.935829" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/' through remote server at 'https://duisalievasabina_hwWtgm:zn455DpzbeKBfaxqZ3ki@hub-cloud.browserstack.com/wd/hub'.</msg>
+<msg time="2025-11-24T15:57:53.089435" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/selenium/webdriver/remote/remote_connection.py:421: UserWarning: Embedding username and password in URL could be insecure, use ClientConfig instead
+  headers = self.get_remote_connection_headers(parsed_url, self._client_config.keep_alive)</msg>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${caps}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-24T15:40:38.257408" elapsed="20.988339"/>
+<status status="PASS" start="2025-11-24T15:57:37.935626" elapsed="15.154292"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-24T15:40:59.246224" elapsed="0.516452"/>
+<status status="PASS" start="2025-11-24T15:57:53.090885" elapsed="0.508320"/>
+</kw>
+<status status="PASS" start="2025-11-24T15:57:37.934956" elapsed="15.664722"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:40:59.763284" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<msg time="2025-11-24T15:57:53.601938" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
 <arg>id=user-name</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:40:59.762856" elapsed="0.026681"/>
+<status status="PASS" start="2025-11-24T15:57:53.600372" elapsed="0.549897"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:40:59.789846" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<msg time="2025-11-24T15:57:54.151093" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:40:59.789688" elapsed="0.014469"/>
+<status status="PASS" start="2025-11-24T15:57:54.150674" elapsed="0.455991"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:40:59.804752" level="INFO">Clicking button 'id=login-button'.</msg>
+<msg time="2025-11-24T15:57:54.609954" level="INFO">Clicking button 'id=login-button'.</msg>
 <arg>id=login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:40:59.804422" elapsed="0.085782"/>
+<status status="PASS" start="2025-11-24T15:57:54.607741" elapsed="1.654774"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>class=inventory_list</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:40:59.890368" elapsed="0.001676"/>
+<status status="PASS" start="2025-11-24T15:57:56.263406" elapsed="0.147525"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:40:59.893402" level="INFO">Current page contains element 'class=inventory_item'.</msg>
+<msg time="2025-11-24T15:57:56.566364" level="INFO">Current page contains element 'class=inventory_item'.</msg>
 <arg>class=inventory_item</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:40:59.892156" elapsed="0.001285"/>
+<status status="PASS" start="2025-11-24T15:57:56.411793" elapsed="0.155420"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-24T15:40:59.893524" elapsed="0.441149"/>
+<status status="PASS" start="2025-11-24T15:57:56.568075" elapsed="0.968500"/>
 </kw>
 <doc>Verify that user can log in with valid credentials</doc>
-<status status="PASS" start="2025-11-24T15:40:38.256926" elapsed="22.077907"/>
+<status status="PASS" start="2025-11-24T15:57:37.934630" elapsed="19.602385"/>
 </test>
-<test id="s1-t2" name="Products" line="24">
+<test id="s1-t2" name="Products" line="32">
+<kw name="Open SauceDemo In BrowserStack">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-24T15:57:57.539156" level="INFO">${caps} = {'browserName': 'firefox', 'os': 'OS X', 'osVersion': 'Sonoma', 'buildName': 'Saucedemo Robot HW', 'sessionName': 'Saucedemo_firefox'}</msg>
+<var>${caps}</var>
+<arg>browserName=${browser}</arg>
+<arg>os=${BS_OS}</arg>
+<arg>osVersion=${BS_OS_VERSION}</arg>
+<arg>buildName=${BS_BUILD_NAME}</arg>
+<arg>sessionName=Saucedemo_${browser}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-24T15:57:57.538602" elapsed="0.000603"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:00.335377" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:57:57.539839" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T15:57:57.539983" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/' through remote server at 'https://duisalievasabina_hwWtgm:zn455DpzbeKBfaxqZ3ki@hub-cloud.browserstack.com/wd/hub'.</msg>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${caps}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-24T15:41:00.335250" elapsed="2.544581"/>
+<status status="PASS" start="2025-11-24T15:57:57.539398" elapsed="13.593538"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-24T15:41:02.880699" elapsed="0.515368"/>
+<status status="PASS" start="2025-11-24T15:58:11.133641" elapsed="0.590971"/>
+</kw>
+<status status="PASS" start="2025-11-24T15:57:57.538134" elapsed="14.186971"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:03.396559" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<msg time="2025-11-24T15:58:11.726654" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
 <arg>id=user-name</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.396268" elapsed="0.029508"/>
+<status status="PASS" start="2025-11-24T15:58:11.725747" elapsed="0.514247"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:03.426089" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<msg time="2025-11-24T15:58:12.243226" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.425935" elapsed="0.010806"/>
+<status status="PASS" start="2025-11-24T15:58:12.240888" elapsed="0.566482"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:03.437016" level="INFO">Clicking button 'id=login-button'.</msg>
+<msg time="2025-11-24T15:58:12.812189" level="INFO">Clicking button 'id=login-button'.</msg>
 <arg>id=login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.436891" elapsed="0.078003"/>
+<status status="PASS" start="2025-11-24T15:58:12.810319" elapsed="0.758495"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>class=inventory_list</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.515047" elapsed="0.001489"/>
+<status status="PASS" start="2025-11-24T15:58:13.569259" elapsed="0.136984"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:03.517685" level="INFO">Current page contains element 'class=inventory_item'.</msg>
+<msg time="2025-11-24T15:58:13.841966" level="INFO">Current page contains element 'class=inventory_item'.</msg>
 <arg>class=inventory_item</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.516637" elapsed="0.001085"/>
+<status status="PASS" start="2025-11-24T15:58:13.707662" elapsed="0.134650"/>
 </kw>
 <kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:03.519051" level="INFO">${items} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="efddf3e1-5fbf-4d10-8b81-ff05b0761b1c", element="05a72a7b-7dfd-4316-94cc-92c8f278ff16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (s...</msg>
+<msg time="2025-11-24T15:58:13.990410" level="INFO">${items} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3a5bdbfb392cf5e9290a5a754c5c26b6c4729759", element="5e1e930a-c11b-4a45-982e-afc914da9705")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
 <var>${items}</var>
 <arg>class=inventory_item_name</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.517803" elapsed="0.001272"/>
+<status status="PASS" start="2025-11-24T15:58:13.842993" elapsed="0.147536"/>
 </kw>
 <kw name="Log Many" owner="BuiltIn">
-<msg time="2025-11-24T15:41:03.519291" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="efddf3e1-5fbf-4d10-8b81-ff05b0761b1c", element="05a72a7b-7dfd-4316-94cc-92c8f278ff16")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="efddf3e1-5fbf-4d10-8b81-ff05b0761b1c", element="adaf9db8-a266-46c7-a2c3-3d3dc8edd88f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="efddf3e1-5fbf-4d10-8b81-ff05b0761b1c", element="0485e65e-77e5-43c5-baf2-6b9c12c54c74")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="efddf3e1-5fbf-4d10-8b81-ff05b0761b1c", element="dea3060a-afb3-45ee-b2b0-75316d7b5e40")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="efddf3e1-5fbf-4d10-8b81-ff05b0761b1c", element="e19efaed-eb89-42be-802c-223c987d2975")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="efddf3e1-5fbf-4d10-8b81-ff05b0761b1c", element="d2dab632-10bf-42f5-a059-61ffd101dc92")&gt;]</msg>
+<msg time="2025-11-24T15:58:13.991380" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="3a5bdbfb392cf5e9290a5a754c5c26b6c4729759", element="5e1e930a-c11b-4a45-982e-afc914da9705")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3a5bdbfb392cf5e9290a5a754c5c26b6c4729759", element="9a34cb1e-5401-4b8f-a345-4a959febec4d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3a5bdbfb392cf5e9290a5a754c5c26b6c4729759", element="98140c57-ce16-4b33-a201-987ce35d1c9c")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3a5bdbfb392cf5e9290a5a754c5c26b6c4729759", element="f866e3af-f8ef-47c9-b973-e0ae52ca983d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3a5bdbfb392cf5e9290a5a754c5c26b6c4729759", element="e1b66105-6ee8-4de6-a83d-61962090a00d")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="3a5bdbfb392cf5e9290a5a754c5c26b6c4729759", element="08501377-daf3-4eaf-9200-535c34bcfacb")&gt;]</msg>
 <arg>${items}</arg>
 <doc>Logs the given messages as separate entries using the INFO level.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.519187" elapsed="0.000129"/>
+<status status="PASS" start="2025-11-24T15:58:13.991101" elapsed="0.000358"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-11-24T15:41:03.519443" level="INFO">Length is 6.</msg>
+<msg time="2025-11-24T15:58:13.991812" level="INFO">Length is 6.</msg>
 <arg>${items}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.519389" elapsed="0.000072"/>
+<status status="PASS" start="2025-11-24T15:58:13.991632" elapsed="0.000237"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-24T15:41:03.519510" elapsed="0.536992"/>
+<status status="PASS" start="2025-11-24T15:58:13.992063" elapsed="1.117015"/>
 </kw>
 <doc>Verify that all product elements are visible after login</doc>
-<status status="PASS" start="2025-11-24T15:41:00.334981" elapsed="3.721691"/>
+<status status="PASS" start="2025-11-24T15:57:57.537430" elapsed="17.572312"/>
 </test>
-<test id="s1-t3" name="Adding to card" line="39">
+<test id="s1-t3" name="Adding to card" line="46">
+<kw name="Open SauceDemo In BrowserStack">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-24T15:58:15.111845" level="INFO">${caps} = {'browserName': 'firefox', 'os': 'OS X', 'osVersion': 'Sonoma', 'buildName': 'Saucedemo Robot HW', 'sessionName': 'Saucedemo_firefox'}</msg>
+<var>${caps}</var>
+<arg>browserName=${browser}</arg>
+<arg>os=${BS_OS}</arg>
+<arg>osVersion=${BS_OS_VERSION}</arg>
+<arg>buildName=${BS_BUILD_NAME}</arg>
+<arg>sessionName=Saucedemo_${browser}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-24T15:58:15.111304" elapsed="0.000590"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:04.057317" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:58:15.112478" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T15:58:15.112599" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/' through remote server at 'https://duisalievasabina_hwWtgm:zn455DpzbeKBfaxqZ3ki@hub-cloud.browserstack.com/wd/hub'.</msg>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${caps}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-24T15:41:04.057159" elapsed="2.512378"/>
+<status status="PASS" start="2025-11-24T15:58:15.112094" elapsed="33.579170"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-24T15:41:06.570181" elapsed="0.517740"/>
+<status status="PASS" start="2025-11-24T15:58:48.692207" elapsed="0.613970"/>
+</kw>
+<status status="PASS" start="2025-11-24T15:58:15.110813" elapsed="34.196162"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:07.088753" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<msg time="2025-11-24T15:58:49.307822" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
 <arg>id=user-name</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.088102" elapsed="0.027907"/>
+<status status="PASS" start="2025-11-24T15:58:49.307328" elapsed="0.671492"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:07.116305" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<msg time="2025-11-24T15:58:49.981096" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.116159" elapsed="0.014570"/>
+<status status="PASS" start="2025-11-24T15:58:49.979829" elapsed="0.826201"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:07.131069" level="INFO">Clicking button 'id=login-button'.</msg>
+<msg time="2025-11-24T15:58:50.807221" level="INFO">Clicking button 'id=login-button'.</msg>
 <arg>id=login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.130931" elapsed="0.085132"/>
+<status status="PASS" start="2025-11-24T15:58:50.806783" elapsed="0.860890"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>class=inventory_list</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.216206" elapsed="0.001643"/>
+<status status="PASS" start="2025-11-24T15:58:51.668044" elapsed="0.152882"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:07.218116" level="INFO">Clicking button 'xpath=//button[@id='add-to-cart-sauce-labs-backpack']'.</msg>
+<msg time="2025-11-24T15:58:51.822738" level="INFO">Clicking button 'xpath=//button[@id='add-to-cart-sauce-labs-backpack']'.</msg>
 <arg>xpath=//button[@id='add-to-cart-sauce-labs-backpack']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.217990" elapsed="0.060566"/>
+<status status="PASS" start="2025-11-24T15:58:51.821959" elapsed="0.888673"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:07.278874" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
+<msg time="2025-11-24T15:58:52.712309" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
 <arg>class=shopping_cart_link</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.278718" elapsed="0.061565"/>
+<status status="PASS" start="2025-11-24T15:58:52.711527" elapsed="0.382200"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>class=cart_item</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.340449" elapsed="0.001572"/>
+<status status="PASS" start="2025-11-24T15:58:53.094699" elapsed="0.145474"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:07.343108" level="INFO">Current page contains element 'class=inventory_item_name'.</msg>
+<msg time="2025-11-24T15:58:53.386396" level="INFO">Current page contains element 'class=inventory_item_name'.</msg>
 <arg>class=inventory_item_name</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.342159" elapsed="0.000986"/>
+<status status="PASS" start="2025-11-24T15:58:53.243268" elapsed="0.143351"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.343229" elapsed="0.523285"/>
+<status status="PASS" start="2025-11-24T15:58:53.387226" elapsed="1.044029"/>
 </kw>
 <doc>Verify that user can add a product to the shopping cart</doc>
-<status status="PASS" start="2025-11-24T15:41:04.056865" elapsed="3.809806"/>
+<status status="PASS" start="2025-11-24T15:58:15.110133" elapsed="39.321549"/>
 </test>
-<test id="s1-t4" name="Completing" line="54">
+<test id="s1-t4" name="Completing" line="60">
+<kw name="Open SauceDemo In BrowserStack">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-24T15:58:54.433571" level="INFO">${caps} = {'browserName': 'firefox', 'os': 'OS X', 'osVersion': 'Sonoma', 'buildName': 'Saucedemo Robot HW', 'sessionName': 'Saucedemo_firefox'}</msg>
+<var>${caps}</var>
+<arg>browserName=${browser}</arg>
+<arg>os=${BS_OS}</arg>
+<arg>osVersion=${BS_OS_VERSION}</arg>
+<arg>buildName=${BS_BUILD_NAME}</arg>
+<arg>sessionName=Saucedemo_${browser}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-24T15:58:54.433050" elapsed="0.000565"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:07.867205" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:58:54.434225" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T15:58:54.434369" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/' through remote server at 'https://duisalievasabina_hwWtgm:zn455DpzbeKBfaxqZ3ki@hub-cloud.browserstack.com/wd/hub'.</msg>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${caps}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-24T15:41:07.867060" elapsed="2.507801"/>
+<status status="PASS" start="2025-11-24T15:58:54.433820" elapsed="22.623251"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-24T15:41:10.375286" elapsed="0.513163"/>
+<status status="PASS" start="2025-11-24T15:59:17.057819" elapsed="0.613991"/>
+</kw>
+<status status="PASS" start="2025-11-24T15:58:54.432618" elapsed="23.240645"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:10.889207" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<msg time="2025-11-24T15:59:17.674779" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
 <arg>id=user-name</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:10.888801" elapsed="0.031308"/>
+<status status="PASS" start="2025-11-24T15:59:17.673872" elapsed="0.551685"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:10.920463" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<msg time="2025-11-24T15:59:18.227752" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:10.920296" elapsed="0.011998"/>
+<status status="PASS" start="2025-11-24T15:59:18.226655" elapsed="0.595232"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:10.932599" level="INFO">Clicking button 'id=login-button'.</msg>
+<msg time="2025-11-24T15:59:18.822942" level="INFO">Clicking button 'id=login-button'.</msg>
 <arg>id=login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:10.932464" elapsed="0.096512"/>
+<status status="PASS" start="2025-11-24T15:59:18.822514" elapsed="1.409268"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>class=inventory_list</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.029138" elapsed="0.001825"/>
+<status status="PASS" start="2025-11-24T15:59:20.235443" elapsed="0.140404"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:11.031223" level="INFO">Clicking button 'xpath=//button[@id='add-to-cart-sauce-labs-bike-light']'.</msg>
+<msg time="2025-11-24T15:59:20.377399" level="INFO">Clicking button 'xpath=//button[@id='add-to-cart-sauce-labs-bike-light']'.</msg>
 <arg>xpath=//button[@id='add-to-cart-sauce-labs-bike-light']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.031097" elapsed="0.056639"/>
+<status status="PASS" start="2025-11-24T15:59:20.376694" elapsed="1.089290"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:11.088025" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
+<msg time="2025-11-24T15:59:21.467689" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
 <arg>class=shopping_cart_link</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.087892" elapsed="0.062116"/>
+<status status="PASS" start="2025-11-24T15:59:21.466847" elapsed="0.387112"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>class=cart_item</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.150167" elapsed="0.001583"/>
+<status status="PASS" start="2025-11-24T15:59:21.854953" elapsed="0.179514"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:11.151962" level="INFO">Clicking button 'id=checkout'.</msg>
+<msg time="2025-11-24T15:59:22.037869" level="INFO">Clicking button 'id=checkout'.</msg>
 <arg>id=checkout</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.151869" elapsed="0.065171"/>
+<status status="PASS" start="2025-11-24T15:59:22.035556" elapsed="0.790910"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>id=first-name</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.217187" elapsed="0.001685"/>
+<status status="PASS" start="2025-11-24T15:59:22.827892" elapsed="0.131967"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:11.219037" level="INFO">Typing text 'Galateya' into text field 'id=first-name'.</msg>
+<msg time="2025-11-24T15:59:22.961170" level="INFO">Typing text 'Galateya' into text field 'id=first-name'.</msg>
 <arg>id=first-name</arg>
 <arg>Galateya</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.218955" elapsed="0.016455"/>
+<status status="PASS" start="2025-11-24T15:59:22.960687" elapsed="0.418735"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:11.235698" level="INFO">Typing text 'Test' into text field 'id=last-name'.</msg>
+<msg time="2025-11-24T15:59:23.380773" level="INFO">Typing text 'Test' into text field 'id=last-name'.</msg>
 <arg>id=last-name</arg>
 <arg>Test</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.235545" elapsed="0.008043"/>
+<status status="PASS" start="2025-11-24T15:59:23.380306" elapsed="0.793055"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:11.244001" level="INFO">Typing text '090003' into text field 'id=postal-code'.</msg>
+<msg time="2025-11-24T15:59:24.177514" level="INFO">Typing text '090003' into text field 'id=postal-code'.</msg>
 <arg>id=postal-code</arg>
 <arg>090003</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.243777" elapsed="0.009170"/>
+<status status="PASS" start="2025-11-24T15:59:24.176255" elapsed="0.425805"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:11.253313" level="INFO">Clicking button 'id=continue'.</msg>
+<msg time="2025-11-24T15:59:24.603663" level="INFO">Clicking button 'id=continue'.</msg>
 <arg>id=continue</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.253178" elapsed="0.066128"/>
+<status status="PASS" start="2025-11-24T15:59:24.602945" elapsed="0.525022"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=finish</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.319466" elapsed="0.006190"/>
+<status status="PASS" start="2025-11-24T15:59:25.128897" elapsed="0.294185"/>
 </kw>
 <kw name="Scroll Element Into View" owner="SeleniumLibrary">
 <arg>id=finish</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.325786" elapsed="0.263742"/>
+<status status="PASS" start="2025-11-24T15:59:25.425979" elapsed="0.846306"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-24T15:41:12.591216" level="INFO">Slept 1 second.</msg>
+<msg time="2025-11-24T15:59:27.276280" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-24T15:41:11.589748" elapsed="1.002058"/>
+<status status="PASS" start="2025-11-24T15:59:26.273362" elapsed="1.003495"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:12.594261" level="INFO">Executing JavaScript:
+<msg time="2025-11-24T15:59:27.281914" level="INFO">Executing JavaScript:
 document.getElementById("finish").click();
 Without any arguments.</msg>
 <arg>document.getElementById("finish").click();</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-11-24T15:41:12.592772" elapsed="0.019456"/>
+<status status="PASS" start="2025-11-24T15:59:27.279867" elapsed="0.142799"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-24T15:41:14.614465" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-11-24T15:59:29.426392" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-24T15:41:12.612559" elapsed="2.002425"/>
+<status status="PASS" start="2025-11-24T15:59:27.423518" elapsed="2.003947"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Thank you for your order!</arg>
 <arg>15s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-24T15:41:14.615964" elapsed="0.006439"/>
+<status status="PASS" start="2025-11-24T15:59:29.429101" elapsed="0.130940"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-11-24T15:41:14.626893" level="INFO">Current page contains text 'Thank you for your order!'.</msg>
+<msg time="2025-11-24T15:59:29.864076" level="INFO">Current page contains text 'Thank you for your order!'.</msg>
 <arg>Thank you for your order!</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-11-24T15:41:14.622708" elapsed="0.004265"/>
+<status status="PASS" start="2025-11-24T15:59:29.560900" elapsed="0.303892"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-24T15:41:14.627155" elapsed="0.434774"/>
+<status status="PASS" start="2025-11-24T15:59:29.865553" elapsed="1.430065"/>
 </kw>
 <doc>Verify that user can complete checkout successfully</doc>
-<status status="PASS" start="2025-11-24T15:41:07.866815" elapsed="7.195260"/>
+<status status="PASS" start="2025-11-24T15:58:54.431999" elapsed="36.864230"/>
 </test>
-<status status="PASS" start="2025-11-24T15:40:38.171619" elapsed="36.890751"/>
+<status status="PASS" start="2025-11-24T15:57:37.841444" elapsed="113.455510"/>
 </suite>
 <statistics>
 <total>
@@ -349,5 +419,9 @@ Without any arguments.</msg>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-11-24T15:57:37.935777" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T15:57:57.539839" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T15:58:15.112478" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
+<msg time="2025-11-24T15:58:54.434225" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
 </errors>
 </robot>
