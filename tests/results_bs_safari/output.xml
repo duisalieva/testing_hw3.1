@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.6 on darwin)" generated="2025-11-24T15:46:17.767894" rpa="false" schemaversion="5">
+<suite id="s1" name="Saucedemo Tests" source="/Users/sabinaduisaliyeva/PycharmProjects/Testing/tests/saucedemo_tests.robot">
+<test id="s1-t1" name="Login" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:46:17.863722" level="INFO">Opening browser 'safari' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-24T15:46:17.863578" elapsed="2.188397"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:48:24.173989" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<msg time="2025-11-24T15:48:24.174495" level="FAIL">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54001): Read timed out. (read timeout=120)</msg>
+<doc>Maximizes current browser window.</doc>
+<status status="FAIL" start="2025-11-24T15:46:20.052708" elapsed="124.130521">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54001): Read timed out. (read timeout=120)</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.183442" elapsed="0.000029"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.183558" elapsed="0.000016"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.183647" elapsed="0.000015"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=inventory_list</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.183724" elapsed="0.000013"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>class=inventory_item</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.183800" elapsed="0.000013"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.183867" elapsed="0.000012"/>
+</kw>
+<doc>Verify that user can log in with valid credentials</doc>
+<status status="FAIL" start="2025-11-24T15:46:17.863081" elapsed="126.320961">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54001): Read timed out. (read timeout=120)</status>
+</test>
+<test id="s1-t2" name="Products" line="24">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-11-24T15:48:24.184466" elapsed="0.000179">Execution terminated by signal</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.184722" elapsed="0.000015"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.184794" elapsed="0.000013"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.184866" elapsed="0.000012"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.184933" elapsed="0.000013"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=inventory_list</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.185002" elapsed="0.000012"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>class=inventory_item</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.185067" elapsed="0.000012"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<var>${items}</var>
+<arg>class=inventory_item_name</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.185136" elapsed="0.000012"/>
+</kw>
+<kw name="Log Many" owner="BuiltIn">
+<arg>${items}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.185232" elapsed="0.000012"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${items}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.185313" elapsed="0.000013"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-11-24T15:48:24.185379" elapsed="0.000012"/>
+</kw>
+<doc>Verify that all product elements are visible after login</doc>
+<status status="FAIL" start="2025-11-24T15:48:24.184219" elapsed="0.001251">Execution terminated by signal</status>
+</test>
+<test id="s1-t3" name="Adding to card" line="39">
+<doc>Verify that user can add a product to the shopping cart</doc>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-11-24T15:48:24.185582" elapsed="0.000198">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="Completing" line="54">
+<doc>Verify that user can complete checkout successfully</doc>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-11-24T15:48:24.185880" elapsed="0.000169">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" start="2025-11-24T15:46:17.768494" elapsed="126.417805"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat info="combined" combined="NOT robot:exit" pass="0" fail="2" skip="0">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat name="Saucedemo Tests" id="s1" pass="0" fail="4" skip="0">Saucedemo Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-11-24T15:48:24.173989" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+</errors>
+</robot>

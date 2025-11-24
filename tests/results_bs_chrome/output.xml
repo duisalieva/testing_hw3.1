@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.6 on darwin)" generated="2025-11-24T15:39:51.799873" rpa="false" schemaversion="5">
+<suite id="s1" name="Saucedemo Tests" source="/Users/sabinaduisaliyeva/PycharmProjects/Testing/tests/saucedemo_tests.robot">
+<test id="s1-t1" name="Login" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:39:51.925501" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:39:56.946959" level="WARN">The chromedriver version (141.0.7390.78) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (142.0.7444.176); currently, chromedriver 142.0.7444.175 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-24T15:39:51.925360" elapsed="7.038711"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-24T15:39:58.964777" elapsed="0.360437"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:39:59.325862" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:39:59.325426" elapsed="0.079359"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:39:59.405082" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:39:59.404930" elapsed="0.042260"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:39:59.447494" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:39:59.447352" elapsed="0.048594"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=inventory_list</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:39:59.496092" elapsed="0.005476"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:39:59.506633" level="INFO">Current page contains element 'class=inventory_item'.</msg>
+<arg>class=inventory_item</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:39:59.501716" elapsed="0.004980"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-24T15:39:59.506820" elapsed="0.084131"/>
+</kw>
+<doc>Verify that user can log in with valid credentials</doc>
+<status status="PASS" start="2025-11-24T15:39:51.924869" elapsed="7.666268"/>
+</test>
+<test id="s1-t2" name="Products" line="24">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:39:59.591650" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:40:01.116307" level="WARN">The chromedriver version (141.0.7390.78) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (142.0.7444.176); currently, chromedriver 142.0.7444.175 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-24T15:39:59.591512" elapsed="3.340249"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-24T15:40:02.932454" elapsed="0.359437"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:03.292297" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.292046" elapsed="0.074184"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:03.366535" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.366388" elapsed="0.037980"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:03.404673" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.404542" elapsed="0.041471"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=inventory_list</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.446162" elapsed="0.006024"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:03.458010" level="INFO">Current page contains element 'class=inventory_item'.</msg>
+<arg>class=inventory_item</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.452328" elapsed="0.005750"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:03.463679" level="INFO">${items} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="7912c66823501a8a72c3b9e4f4ff6213", element="f.F76743CD28B65B63F894070581ECA50C.d.42E99F8BC46D961242242DA8A5763F4B.e.23")&gt;, &lt;selenium.webdriv...</msg>
+<var>${items}</var>
+<arg>class=inventory_item_name</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.458226" elapsed="0.005481"/>
+</kw>
+<kw name="Log Many" owner="BuiltIn">
+<msg time="2025-11-24T15:40:03.463969" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="7912c66823501a8a72c3b9e4f4ff6213", element="f.F76743CD28B65B63F894070581ECA50C.d.42E99F8BC46D961242242DA8A5763F4B.e.23")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7912c66823501a8a72c3b9e4f4ff6213", element="f.F76743CD28B65B63F894070581ECA50C.d.42E99F8BC46D961242242DA8A5763F4B.e.24")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7912c66823501a8a72c3b9e4f4ff6213", element="f.F76743CD28B65B63F894070581ECA50C.d.42E99F8BC46D961242242DA8A5763F4B.e.25")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7912c66823501a8a72c3b9e4f4ff6213", element="f.F76743CD28B65B63F894070581ECA50C.d.42E99F8BC46D961242242DA8A5763F4B.e.26")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7912c66823501a8a72c3b9e4f4ff6213", element="f.F76743CD28B65B63F894070581ECA50C.d.42E99F8BC46D961242242DA8A5763F4B.e.27")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="7912c66823501a8a72c3b9e4f4ff6213", element="f.F76743CD28B65B63F894070581ECA50C.d.42E99F8BC46D961242242DA8A5763F4B.e.28")&gt;]</msg>
+<arg>${items}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.463852" elapsed="0.000143"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-11-24T15:40:03.464140" level="INFO">Length is 6.</msg>
+<arg>${items}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.464076" elapsed="0.000084"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.464215" elapsed="0.074901"/>
+</kw>
+<doc>Verify that all product elements are visible after login</doc>
+<status status="PASS" start="2025-11-24T15:39:59.591298" elapsed="3.947991"/>
+</test>
+<test id="s1-t3" name="Adding to card" line="39">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:03.539887" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:40:03.645356" level="WARN">The chromedriver version (141.0.7390.78) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (142.0.7444.176); currently, chromedriver 142.0.7444.175 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-24T15:40:03.539748" elapsed="1.659411"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.199765" elapsed="0.358533"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:05.558767" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.558504" elapsed="0.072835"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:05.631641" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.631487" elapsed="0.036501"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:05.668279" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.668151" elapsed="0.042528"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=inventory_list</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.710979" elapsed="0.005605"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:05.716855" level="INFO">Clicking button 'xpath=//button[@id='add-to-cart-sauce-labs-backpack']'.</msg>
+<arg>xpath=//button[@id='add-to-cart-sauce-labs-backpack']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.716733" elapsed="0.038311"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:05.755324" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
+<arg>class=shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.755197" elapsed="0.030494"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=cart_item</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.785955" elapsed="0.008355"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:05.800012" level="INFO">Current page contains element 'class=inventory_item_name'.</msg>
+<arg>class=inventory_item_name</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.794475" elapsed="0.005597"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.800239" elapsed="0.076448"/>
+</kw>
+<doc>Verify that user can add a product to the shopping cart</doc>
+<status status="PASS" start="2025-11-24T15:40:03.539473" elapsed="2.337422"/>
+</test>
+<test id="s1-t4" name="Completing" line="54">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:05.877406" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-11-24T15:40:05.973168" level="WARN">The chromedriver version (141.0.7390.78) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (142.0.7444.176); currently, chromedriver 142.0.7444.175 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-24T15:40:05.877258" elapsed="1.655084"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-24T15:40:07.532883" elapsed="0.360634"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:07.893920" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:07.893663" elapsed="0.070104"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:07.964150" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:07.963978" elapsed="0.037820"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:08.002075" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.001946" elapsed="0.041095"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=inventory_list</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.043194" elapsed="0.005931"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:08.049458" level="INFO">Clicking button 'xpath=//button[@id='add-to-cart-sauce-labs-bike-light']'.</msg>
+<arg>xpath=//button[@id='add-to-cart-sauce-labs-bike-light']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.049309" elapsed="0.033876"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:08.083463" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
+<arg>class=shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.083332" elapsed="0.029798"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=cart_item</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.113275" elapsed="0.006171"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:08.119758" level="INFO">Clicking button 'id=checkout'.</msg>
+<arg>id=checkout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.119623" elapsed="0.039867"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=first-name</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.159688" elapsed="0.006652"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:08.166596" level="INFO">Typing text 'Galateya' into text field 'id=first-name'.</msg>
+<arg>id=first-name</arg>
+<arg>Galateya</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.166473" elapsed="0.035153"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:08.201902" level="INFO">Typing text 'Test' into text field 'id=last-name'.</msg>
+<arg>id=last-name</arg>
+<arg>Test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.201774" elapsed="0.034455"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:08.236606" level="INFO">Typing text '090003' into text field 'id=postal-code'.</msg>
+<arg>id=postal-code</arg>
+<arg>090003</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.236383" elapsed="0.036314"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:08.273077" level="INFO">Clicking button 'id=continue'.</msg>
+<arg>id=continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.272911" elapsed="0.042274"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=finish</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.315337" elapsed="0.015587"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>id=finish</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.331071" elapsed="0.272522"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-24T15:40:09.606749" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-24T15:40:08.604142" elapsed="1.004526"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:09.610912" level="INFO">Executing JavaScript:
+document.getElementById("finish").click();
+Without any arguments.</msg>
+<arg>document.getElementById("finish").click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-24T15:40:09.609539" elapsed="0.022425"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-24T15:40:11.634535" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-24T15:40:09.632269" elapsed="2.002753"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Thank you for your order!</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-24T15:40:11.635841" elapsed="0.015889"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-24T15:40:11.659426" level="INFO">Current page contains text 'Thank you for your order!'.</msg>
+<arg>Thank you for your order!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-24T15:40:11.652062" elapsed="0.007433"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-24T15:40:11.659651" elapsed="0.081285"/>
+</kw>
+<doc>Verify that user can complete checkout successfully</doc>
+<status status="PASS" start="2025-11-24T15:40:05.877049" elapsed="5.864049"/>
+</test>
+<status status="PASS" start="2025-11-24T15:39:51.800610" elapsed="19.940788"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Saucedemo Tests" id="s1" pass="4" fail="0" skip="0">Saucedemo Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-11-24T15:39:56.946959" level="WARN">The chromedriver version (141.0.7390.78) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (142.0.7444.176); currently, chromedriver 142.0.7444.175 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-11-24T15:40:01.116307" level="WARN">The chromedriver version (141.0.7390.78) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (142.0.7444.176); currently, chromedriver 142.0.7444.175 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-11-24T15:40:03.645356" level="WARN">The chromedriver version (141.0.7390.78) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (142.0.7444.176); currently, chromedriver 142.0.7444.175 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-11-24T15:40:05.973168" level="WARN">The chromedriver version (141.0.7390.78) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (142.0.7444.176); currently, chromedriver 142.0.7444.175 is recommended for chrome 142.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

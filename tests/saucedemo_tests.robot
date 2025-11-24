@@ -2,17 +2,25 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${URL}         https://www.saucedemo.com/
-${BROWSER}     chrome
-${USERNAME}    standard_user
-${PASSWORD}    secret_sauce
+${URL}             https://www.saucedemo.com/
+${BROWSER}         chrome
+
+${USERNAME}        standard_user
+${PASSWORD}        secret_sauce
+
+# ==== BrowserStack ====
+${BS_USERNAME}     duisalievasabina_hwWtgm
+${BS_ACCESS_KEY}   zn455DpzbeKBfaxqZ3ki
+${REMOTE_URL}      https://${BS_USERNAME}:${BS_ACCESS_KEY}@hub-cloud.browserstack.com/wd/hub
+${BS_OS}           OS X
+${BS_OS_VERSION}   Sonoma
+${BS_BUILD_NAME}   Saucedemo Robot HW
 
 *** Test Cases ***
 
 Login
     [Documentation]    Verify that user can log in with valid credentials
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    Open SauceDemo In BrowserStack
     Input Text    id=user-name    ${USERNAME}
     Input Text    id=password     ${PASSWORD}
     Click Button  id=login-button
@@ -23,8 +31,7 @@ Login
 
 Products
     [Documentation]    Verify that all product elements are visible after login
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    Open SauceDemo In BrowserStack
     Input Text    id=user-name    ${USERNAME}
     Input Text    id=password     ${PASSWORD}
     Click Button  id=login-button
@@ -38,8 +45,7 @@ Products
 
 Adding to card
     [Documentation]    Verify that user can add a product to the shopping cart
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    Open SauceDemo In BrowserStack
     Input Text    id=user-name    ${USERNAME}
     Input Text    id=password     ${PASSWORD}
     Click Button  id=login-button
@@ -53,8 +59,7 @@ Adding to card
 
 Completing
     [Documentation]    Verify that user can complete checkout successfully
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    Open SauceDemo In BrowserStack
     Input Text    id=user-name    ${USERNAME}
     Input Text    id=password     ${PASSWORD}
     Click Button  id=login-button
@@ -85,3 +90,16 @@ Completing
     Page Should Contain         Thank you for your order!
 
     Close Browser
+
+*** Keywords ***
+Open SauceDemo In BrowserStack
+    [Arguments]    ${browser}=${BROWSER}
+    ${caps}=    Create Dictionary
+    ...    browserName=${browser}
+    ...    os=${BS_OS}
+    ...    osVersion=${BS_OS_VERSION}
+    ...    buildName=${BS_BUILD_NAME}
+    ...    sessionName=Saucedemo_${browser}
+
+    Open Browser    ${URL}    ${browser}    remote_url=${REMOTE_URL}    desired_capabilities=${caps}
+    Maximize Browser Window
